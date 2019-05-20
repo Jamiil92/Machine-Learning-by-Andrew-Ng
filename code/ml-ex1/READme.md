@@ -1,1 +1,1 @@
-Here are the different week programming exercises done in python
+programming exercise 1 done in python
