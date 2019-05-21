@@ -77,7 +77,6 @@ print('\n')
 ### (Begin Optional) Selecting appropriate learning rates alpha
 
 learning_rate = logspace(-2,0,9)
-#learning_rate = linspace(0.01,0.1,5)
 colors = list(mcd.CSS4_COLORS.values())  # try CSS4_COLORS OR TABLEAU_COLORS 
 plt.figure(2)
 
@@ -94,7 +93,7 @@ plt.show()
 
 # Estimate the price of a 1650 sq-ft, 3 br house
 test = np.array([1650,3],float)
-test_normalized, mu, sigma = featureNormalize(test)
+test_normalized = (test - mu)/sigma
 test_normalized_augumented = np.append(1, test_normalized)
 price = theta.dot(test_normalized_augumented)
 print("Predicted price of 1650, sq-ft, 3 br house using gradient descent:\n", price)
